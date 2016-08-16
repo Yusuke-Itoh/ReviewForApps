@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
             hs.setAttribute("ac", (int) (Math.random() * 1000));
             
             //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
-            String page =request.getHeader("Referer").substring(35);
+            String page =request.getHeader("Referer").substring(36);
             hs.setAttribute("page",page);
                         
             //ログに情報を記載

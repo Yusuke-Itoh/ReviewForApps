@@ -10,6 +10,8 @@
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();
     ArrayList<DataBeans> appData=(ArrayList<DataBeans>)hs.getAttribute("appData");
+    ArrayList<DataBeans> appInfo=(ArrayList<DataBeans>)hs.getAttribute("appInfo");
+    DataBeans ad=(DataBeans)hs.getAttribute("ad");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,6 +39,14 @@ td {
                     <br>
                     <%=appData.get(i).getPublisher()%>
                 </td>
+                <%if(ad != null){%>
+                <td>
+                    <form action="AdminAppDataDelete" method="POST">
+                    <input id="btnSubmit" type="submit" name="btnSubmit" value="アプリを削除" onClick="disp()">
+                    <input type="hidden" name="appID"  value="<%=appInfo.get(i).getAppID()%>">
+                    </form>
+                </td>
+                <%}%>
             </tr>
         <%}%>
         </table>

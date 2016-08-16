@@ -7,6 +7,8 @@ package jums;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author maimaimai
  */
-public class AdminLogin extends HttpServlet {
+public class AdminDeletedAppDataRestoration extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +35,26 @@ public class AdminLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-                
-            //ユーザー認証が必要なページへのアクセスルートチェックのためのランダムな数字を用意
+            //セッションの呼び出し
             HttpSession hs = request.getSession();
-            hs.setAttribute("ac", (int) (Math.random() * 1000));
+            ArrayList <DataBeans> deletedAppInfo= new <DataBeans>ArrayList();
             
-            //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
-            String page =request.getHeader("Referer").substring(36);
-            hs.setAttribute("page",page);
-                        
-            //ログに情報を記載
-            //Log.getInstance().log("ログインページに遷移");
-            request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
+            //DBからstoreIDを取得、iTunesのLookupAPIで画像データ、名前を習得
+                DataBeansDAO dao = new DataBeansDAO();
+                ArrayList<DataBeansDTO> appList= dao.getDeletedAppData();
+
+                //DTO2DTmappingしてDataBeans型にし、取り出した情報をセッションで持ちまわせるようにする            
+                for(int i=0;i<appList.size();i++){
+                DataBeans db= new DataBeans();
+                db.DTO2UDMapping(appList.get(i));
+                deletedAppInfo.add(db);            
+                }
+                //appInfoをセッションに格納
+                hs.setAttribute("deletedAppInfo", deletedAppInfo);
+            request.getRequestDispatcher("admindeletedappdatarestoration.jsp").forward(request, response);
             
-            
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
         } finally {
             out.close();
         }

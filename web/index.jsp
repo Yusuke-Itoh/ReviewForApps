@@ -16,6 +16,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ReviewForApp</title>
+        <script type="text/javascript">
+            
+    function disp(){
+
+	// 「OK」時の処理開始 ＋ 確認ダイアログの表示
+	if(window.confirm('古いレビューを削除してよろしいですか？')){
+
+		location.href = "AdminDeleteOldReviews"; // example_confirm.html へジャンプ
+	}   
+	// 「OK」時の処理終了
+}
+        </script>
     </head>
     <body>
         <form action="SelectApps" method="POST">
@@ -40,6 +52,11 @@
         <form action="AdminSearch" method="GET">
         検索キーワード入力:<input type="text" name="term" value="">      
         <input type="submit" name="btnSubmit" value="検索">
+        </form>
+        <p><input type="button" value="古いレビューを削除" onClick="disp()"></p>
+        
+        <form action="AdminDeletedAppDataRestoration" method="POST">
+        <input id="btnSubmit" type="submit" name="btnSubmit" value="削除したアプリデータを復元する">
         </form>
         <%}%>       
     </body>

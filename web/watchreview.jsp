@@ -23,7 +23,7 @@
         <title>レビューアプリ選択ページ</title>
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
         <script type="text/javascript" src="js/doubleclick.js"></script>
-            <style type="text/css">
+    <style type="text/css">
    .FreezePaneOff
    {
       visibility: hidden;
@@ -59,30 +59,22 @@
       border: dashed 2px #111;
       padding: 9px;
    }
-</style>
-<style>
-table {
-	border-collapse: collapse;
-}
-td {
-	border: solid 1px;
-	padding: 0.5em;
-}
-        </style>
-        <script language="JavaScript">
-   function FreezeScreen(msg) {
-      scroll(0,0);
-      var outerPane = document.getElementById('FreezePane');
-      var innerPane = document.getElementById('InnerFreezePane');
-      if (outerPane) outerPane.className = 'FreezePaneOn';
-      if (innerPane) innerPane.innerHTML = msg;
-   }
-</script>
+    </style>
+    <style>
+    table {
+            border-collapse: collapse;
+    }
+    td {
+            border: solid 1px;
+            padding: 0.5em;
+    }
+    </style>
+    <script type="text/javascript" src="js/doubleclick.js"></script>
     </head>
     <body>
         <div align="center" id="FreezePane" class="FreezePaneOff">
-   <div id="InnerFreezePane" class="InnerFreezePane"> </div>
-</div>
+    <div id="InnerFreezePane" class="InnerFreezePane"> </div>
+    </div>
         <table>
             <tr>
                 <td><img src="<%=appData.get(appIDnum.getAppID()-1).getImg()%>" alt=""></td>   
@@ -96,7 +88,7 @@ td {
         </table>
                 <hr>
         
-         <%for(int i=0;i<revList.size();i++){%>
+        <%for(int i=0;i<revList.size();i++){%>
         <table>
             <tr>
                 <td>レビュータイトル：<%=revList.get(i).getReviewTitle()%></td>

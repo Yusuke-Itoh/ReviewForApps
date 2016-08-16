@@ -29,7 +29,7 @@ public class DataBeansDAO {
         PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
-            st =  con.prepareStatement("select * from app_t");
+            st =  con.prepareStatement("select * from app_t where deleteFlg = 0");
             ResultSet rs = st.executeQuery();
             ArrayList<DataBeansDTO> appInfo = new ArrayList();
             
@@ -183,7 +183,6 @@ public class DataBeansDAO {
             st =  con.prepareStatement("update user_t set totalPoints = totalPoints+1 where userID=?");
             st.setInt(1, ud.getUserID());
             st.executeUpdate();
-            //他の数値も持たせないとだめっぽいぞ！
             st =  con.prepareStatement("update review set Points = Points+1 where reviewID=?");
             st.setInt(1, ud.getReviewID());
             st.executeUpdate();
@@ -287,7 +286,8 @@ public class DataBeansDAO {
 
     }
         
-        //管理者がレビューの削除を行うメソッド
+        //管理者が個別にレビューの削除を行うメソッド
+        //必要ないかも？
         public void adminDeleteReview(DataBeansDTO ud) throws SQLException{
             Connection con = null;
             PreparedStatement st = null;
@@ -308,4 +308,108 @@ public class DataBeansDAO {
         }
 
     }
+        
+        /*
+        *管理者権限によるレビューの削除処理を行うメソッド
+        *14日を過ぎたレビューは削除対象とし、管理者の削除行為によって対象のレビューはすべて削除される。
+        */
+            public void adminDeleteOldReviews()throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
+        try{
+            con = DBManager.getConnection();
+            st =  con.prepareStatement("delete from review where newDate = current_date() - 14");
+            st.executeUpdate();
+            System.out.println("delete completed");
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            throw new SQLException(e);
+        }finally{
+            if(con != null){
+                con.close();
+            }
+        }
+            }
+            
+    /*
+    *アプリのデリートフラグを起動するメソッド
+    *ユーザーデータ削除処理は外部キー連結のために行うことができないので、
+    *UPDETE処理で削除のフラグの数字を0から1にすることで対応する
+    *また、この際不具合の原因になるので該当アプリIDと結びついているレビューは消去する。
+    */
+    public void appDataDelete(DataBeansDTO ud) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
+        try{
+            con = DBManager.getConnection();
+            st =  con.prepareStatement("update app_t set deleteFlg = 1 where appID = ?");
+            st.setInt(1, ud.getAppID());
+            st.executeUpdate();
+            st =  con.prepareStatement("delete from review where reviewAppID = ?");
+            st.setInt(1, ud.getAppID());
+            st.executeUpdate();
+            System.out.println("delete completed");
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            throw new SQLException(e);
+        }finally{
+            if(con != null){
+                con.close();
+            }
+        }
+    }
+    
+    /*
+    *アプリのデリートフラグを折るメソッド
+    *同名アプリを追加するとややこしくなるため
+    */
+    public void deletedAppDataRestoration(DataBeansDTO ud) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
+        try{
+            con = DBManager.getConnection();
+            st =  con.prepareStatement("update app_t set deleteFlg = 0 where appID=?");
+            st.setInt(1, ud.getAppID());
+            st.executeUpdate();
+            System.out.println("update completed");
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            throw new SQLException(e);
+        }finally{
+            if(con != null){
+                con.close();
+            }
+        }
+    }
+
+    public ArrayList<DataBeansDTO> getDeletedAppData() throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
+        try{
+            con = DBManager.getConnection();
+            st =  con.prepareStatement("select * from app_t where deleteFlg = 1");
+            ResultSet rs = st.executeQuery();
+            ArrayList<DataBeansDTO> appInfo = new ArrayList();
+            
+            while(rs.next()){
+                DataBeansDTO resultDb = new DataBeansDTO();
+                resultDb.setAppID(rs.getInt(1));
+                resultDb.setAppName(rs.getString(2));
+                //resultDb.setPublisher(rs.getString(3));
+                //resultDb.setStoreID(rs.getInt(4));
+                appInfo.add(resultDb);                
+            }
+            System.out.println("select completed");
+            return appInfo;
+            
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            throw new SQLException(e);
+        }finally{
+            if(con != null){
+                con.close();
+            }
+        }
+    }
+    
 }

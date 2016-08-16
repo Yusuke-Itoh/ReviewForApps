@@ -76,6 +76,22 @@
         <servlet-name>AdminAddAppComplete</servlet-name>
         <servlet-class>jums.AdminAddAppComplete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminDeleteOldReviews</servlet-name>
+        <servlet-class>jums.AdminDeleteOldReviews</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminAppDataDelete</servlet-name>
+        <servlet-class>jums.AdminAppDataDelete</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDeletedAppDataRestoration</servlet-name>
+        <servlet-class>jums.AdminDeletedAppDataRestoration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDeletedAppDataRestorationComplete</servlet-name>
+        <servlet-class>jums.AdminDeletedAppDataRestorationComplete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SelectApps</servlet-name>
         <url-pattern>/SelectApps</url-pattern>
@@ -151,6 +167,22 @@
     <servlet-mapping>
         <servlet-name>AdminAddAppComplete</servlet-name>
         <url-pattern>/AdminAddAppComplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDeleteOldReviews</servlet-name>
+        <url-pattern>/AdminDeleteOldReviews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminAppDataDelete</servlet-name>
+        <url-pattern>/AdminAppDataDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDeletedAppDataRestoration</servlet-name>
+        <url-pattern>/AdminDeletedAppDataRestoration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDeletedAppDataRestorationComplete</servlet-name>
+        <url-pattern>/AdminDeletedAppDataRestorationComplete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

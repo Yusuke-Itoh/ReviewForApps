@@ -7,17 +7,17 @@ package jums;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author maimaimai
  */
-public class AdminLogin extends HttpServlet {
+public class AdminDeleteOldReviews extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +33,17 @@ public class AdminLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-                
-            //ユーザー認証が必要なページへのアクセスルートチェックのためのランダムな数字を用意
-            HttpSession hs = request.getSession();
-            hs.setAttribute("ac", (int) (Math.random() * 1000));
+                //データベースにアクセスし、レビュー削除処理をする。
+            //結果ページもJSPで用意する。
             
-            //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
-            String page =request.getHeader("Referer").substring(36);
-            hs.setAttribute("page",page);
-                        
-            //ログに情報を記載
-            //Log.getInstance().log("ログインページに遷移");
-            request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
+            //データベースアクセスして削除処理
+            DataBeansDAO.getInstance().adminDeleteOldReviews();
             
+            request.getRequestDispatcher("admindeleteoldreviews.jsp").forward(request, response);
             
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+
         } finally {
             out.close();
         }

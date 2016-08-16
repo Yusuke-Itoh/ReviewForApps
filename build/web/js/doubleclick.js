@@ -5,12 +5,10 @@
  */
 
 
-var set=0;
-function nidoosi() {
-if(set===0){
-set=1;
-}else{
-alert("二度押しはいけません。\nそのままお待ちください。");
-return false;
-}
-}
+   function FreezeScreen(msg) {
+      scroll(0,0);
+      var outerPane = document.getElementById('FreezePane');
+      var innerPane = document.getElementById('InnerFreezePane');
+      if (outerPane) outerPane.className = 'FreezePaneOn';
+      if (innerPane) innerPane.innerHTML = msg;
+   }

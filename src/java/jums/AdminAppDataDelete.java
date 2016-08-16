@@ -7,6 +7,7 @@ package jums;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author maimaimai
  */
-public class AdminLogin extends HttpServlet {
+public class AdminAppDataDelete extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +34,34 @@ public class AdminLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-                
-            //ユーザー認証が必要なページへのアクセスルートチェックのためのランダムな数字を用意
+            //appIDを受け取ってDTOにマッピングしデータベースアクセス、削除処理をする。（実際には更新処理だけどね）
             HttpSession hs = request.getSession();
-            hs.setAttribute("ac", (int) (Math.random() * 1000));
+            request.setCharacterEncoding("UTF-8");//リクエストパラメータの文字コードをUTF-8に変更
+            DataBeans app = new DataBeans();
             
-            //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
-            String page =request.getHeader("Referer").substring(36);
-            hs.setAttribute("page",page);
-                        
-            //ログに情報を記載
-            //Log.getInstance().log("ログインページに遷移");
-            request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
+            //hiddenに入れた数値を受け取る
+            app.setAppID(Integer.parseInt(request.getParameter("appID")));
+            
+            //DTO呼び出しマッピング
+            DataBeansDTO appID = new DataBeansDTO();
+            app.UD2DTOMapping(appID);
+            
+            //DBへの削除処理
+            DataBeansDAO.getInstance().appDataDelete(appID);
+            
+            //セッションの削除
+            hs.removeAttribute("appInfo");
+            hs.removeAttribute("appData");
+            
+            request.getRequestDispatcher("/adminappdatadelete.jsp").forward(request, response);
             
             
+        }catch(Exception e){
+            //何らかの理由で失敗したらエラーページにエラー文を渡して表示。想定は不正なアクセスとDBエラー
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
+        
+        
         } finally {
             out.close();
         }
