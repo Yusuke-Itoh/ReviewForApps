@@ -4,7 +4,7 @@
     Author     : maimaimai
 --%>
 
-<%@page import="jums.DataBeans"%>
+<%@page import="beans.DataBeans"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -14,6 +14,7 @@
 %>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <footer>
         <hr>
         <%if(ud == null && ad == null){%>
         <div style="display:inline-flex">
@@ -22,3 +23,4 @@
         </form>
         </div>
         <%}%>
+        </footer>

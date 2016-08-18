@@ -4,7 +4,7 @@
     Author     : maimaimai
 --%>
 
-<%@page import="jums.DataBeans"%>
+<%@page import="beans.DataBeans"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -12,8 +12,8 @@
     DataBeans ud = (DataBeans) hs.getAttribute("ud");
     DataBeans ad = (DataBeans) hs.getAttribute("ad");
 %>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<header>
         <%if(ud == null && ad != null){%>
         <div style="display:inline-flex">
         管理者<%=ad.getName()%>さん。ただいまログイン中です。
@@ -40,3 +40,4 @@
         </div>
         <hr>
         <%}%>
+</header>

@@ -3,11 +3,11 @@
     Created on : 2016/08/12, 11:50:01
     Author     : maimaimai
 --%>
-<%@page import="jums.JumsHelper"%>
-<%@page import="jums.DataBeans"%>
+<%@page import="rfa.JumsHelper"%>
+<%@page import="beans.DataBeans"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
-    DataBeans ud = (DataBeans)request.getAttribute("ud");
+    DataBeans ud = (DataBeans)session.getAttribute("ud");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

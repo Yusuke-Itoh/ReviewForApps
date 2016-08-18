@@ -3,8 +3,8 @@
     Created on : 2016/08/12, 11:11:32
     Author     : maimaimai
 --%>
-<%@page import="jums.DataBeans"%>
-<%@page import="jums.JumsHelper"%>
+<%@page import="beans.DataBeans"%>
+<%@page import="rfa.JumsHelper"%>
 <%JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();
     DataBeans ud = null;

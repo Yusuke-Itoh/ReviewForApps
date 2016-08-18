@@ -2,95 +2,115 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
         <servlet-name>SelectApps</servlet-name>
-        <servlet-class>jums.SelectApps</servlet-class>
+        <servlet-class>common.SelectApps</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>WatchReview</servlet-name>
-        <servlet-class>jums.WatchReview</servlet-class>
+        <servlet-class>common.WatchReview</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>WriteReview</servlet-name>
-        <servlet-class>jums.WriteReview</servlet-class>
+        <servlet-class>user.WriteReview</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>WriteReviewConfirm</servlet-name>
-        <servlet-class>jums.WriteReviewConfirm</servlet-class>
+        <servlet-class>user.WriteReviewConfirm</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>WriteReviewResult</servlet-name>
-        <servlet-class>jums.WriteReviewResult</servlet-class>
+        <servlet-class>user.WriteReviewResult</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>jums.Login</servlet-class>
+        <servlet-class>user.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginResult</servlet-name>
-        <servlet-class>jums.LoginResult</servlet-class>
+        <servlet-class>user.LoginResult</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Registration</servlet-name>
-        <servlet-class>jums.Registration</servlet-class>
+        <servlet-class>user.Registration</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegistrationConfirm</servlet-name>
-        <servlet-class>jums.RegistrationConfirm</servlet-class>
+        <servlet-class>user.RegistrationConfirm</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegistrationComplete</servlet-name>
-        <servlet-class>jums.RegistrationComplete</servlet-class>
+        <servlet-class>user.RegistrationComplete</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>jums.Logout</servlet-class>
+        <servlet-class>user.Logout</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PointAdd</servlet-name>
-        <servlet-class>jums.PointAdd</servlet-class>
+        <servlet-class>user.PointAdd</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Ranking</servlet-name>
-        <servlet-class>jums.Ranking</servlet-class>
+        <servlet-class>user.Ranking</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminLogin</servlet-name>
-        <servlet-class>jums.AdminLogin</servlet-class>
+        <servlet-class>admin.AdminLogin</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminLoginResult</servlet-name>
-        <servlet-class>jums.AdminLoginResult</servlet-class>
+        <servlet-class>admin.AdminLoginResult</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminLogout</servlet-name>
-        <servlet-class>jums.AdminLogout</servlet-class>
+        <servlet-class>admin.AdminLogout</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminSearch</servlet-name>
-        <servlet-class>jums.AdminSearch</servlet-class>
+        <servlet-class>admin.AdminSearch</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminAddAppConfirm</servlet-name>
-        <servlet-class>jums.AdminAddAppConfirm</servlet-class>
+        <servlet-class>admin.AdminAddAppConfirm</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminAddAppComplete</servlet-name>
-        <servlet-class>jums.AdminAddAppComplete</servlet-class>
+        <servlet-class>admin.AdminAddAppComplete</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminDeleteOldReviews</servlet-name>
-        <servlet-class>jums.AdminDeleteOldReviews</servlet-class>
+        <servlet-class>admin.AdminDeleteOldReviews</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminAppDataDelete</servlet-name>
-        <servlet-class>jums.AdminAppDataDelete</servlet-class>
+        <servlet-class>admin.AdminAppDataDelete</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminDeletedAppDataRestoration</servlet-name>
-        <servlet-class>jums.AdminDeletedAppDataRestoration</servlet-class>
+        <servlet-class>admin.AdminDeletedAppDataRestoration</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminDeletedAppDataRestorationComplete</servlet-name>
-        <servlet-class>jums.AdminDeletedAppDataRestorationComplete</servlet-class>
+        <servlet-class>admin.AdminDeletedAppDataRestorationComplete</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyDelete</servlet-name>
+        <servlet-class>user.MyDelete</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyDeleteResult</servlet-name>
+        <servlet-class>user.MyDeleteResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>common.Index</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminUserDataRestoration</servlet-name>
+        <servlet-class>admin.AdminUserDataRestoration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminUserDataRestorationComplete</servlet-name>
+        <servlet-class>admin.AdminUserDataRestorationComplete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SelectApps</servlet-name>
@@ -183,6 +203,26 @@
     <servlet-mapping>
         <servlet-name>AdminDeletedAppDataRestorationComplete</servlet-name>
         <url-pattern>/AdminDeletedAppDataRestorationComplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyDelete</servlet-name>
+        <url-pattern>/MyDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyDeleteResult</servlet-name>
+        <url-pattern>/MyDeleteResult</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/Index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUserDataRestoration</servlet-name>
+        <url-pattern>/AdminUserDataRestoration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUserDataRestorationComplete</servlet-name>
+        <url-pattern>/AdminUserDataRestorationComplete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

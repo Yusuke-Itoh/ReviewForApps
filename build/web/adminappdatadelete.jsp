@@ -3,7 +3,7 @@
     Created on : 2016/08/16, 14:32:27
     Author     : maimaimai
 --%>
-<%@page import="jums.JumsHelper"%>
+<%@page import="rfa.JumsHelper"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
 %>

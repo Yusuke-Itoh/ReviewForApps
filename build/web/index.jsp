@@ -3,7 +3,7 @@
     Created on : 2016/08/09, 17:10:58
     Author     : maimaimai
 --%>
-<%@page import="jums.DataBeans"%>
+<%@page import="beans.DataBeans"%>
 <%
     HttpSession hs = request.getSession();
     DataBeans ud = (DataBeans)hs.getAttribute("ud");
@@ -43,6 +43,11 @@
         <form action="Ranking" method="POST">
         <input id="btnSubmit" type="submit" name="btnSubmit" value="ランキング">
         </form>
+        <br><br>
+        <form action="MyDelete" method="POST">
+        <input id="btnSubmit" type="submit" name="btnSubmit" value="アカウント削除画面へ">
+        <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+        </form>
         <%}%>
         <br>
         <!--管理者用-->
@@ -57,6 +62,10 @@
         
         <form action="AdminDeletedAppDataRestoration" method="POST">
         <input id="btnSubmit" type="submit" name="btnSubmit" value="削除したアプリデータを復元する">
+        </form>
+        <br>
+        <form action="AdminUserDataRestoration" method="POST">
+        <input id="btnSubmit" type="submit" name="btnSubmit" value="ユーザーデータの復元">
         </form>
         <%}%>       
     </body>

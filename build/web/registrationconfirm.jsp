@@ -4,8 +4,8 @@
     Author     : maimaimai
 --%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="jums.DataBeans"%>
-<%@page import="jums.JumsHelper"%>
+<%@page import="beans.DataBeans"%>
+<%@page import="rfa.JumsHelper"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();

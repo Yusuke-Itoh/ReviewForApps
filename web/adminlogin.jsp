@@ -3,7 +3,7 @@
     Created on : 2016/08/15, 11:06:24
     Author     : maimaimai
 --%>
-<%@page import="jums.JumsHelper"%>
+<%@page import="rfa.JumsHelper"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();

@@ -3,9 +3,9 @@
     Created on : 2016/08/11, 0:10:11
     Author     : maimaimai
 --%>
-<%@page import="jums.JumsHelper"%>
+<%@page import="rfa.JumsHelper"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="jums.DataBeans"%>
+<%@page import="beans.DataBeans"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();

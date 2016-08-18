@@ -3,8 +3,8 @@
     Created on : 2016/08/15, 14:43:24
     Author     : maimaimai
 --%>
-<%@page import="jums.JumsHelper"%>
-<%@page import="jums.DataBeans"%>
+<%@page import="rfa.JumsHelper"%>
+<%@page import="beans.DataBeans"%>
 <%@page import="java.util.ArrayList"%>
 <%
     JumsHelper jh = JumsHelper.getInstance();
