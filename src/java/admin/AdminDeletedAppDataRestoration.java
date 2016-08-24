@@ -24,6 +24,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminDeletedAppDataRestoration extends HttpServlet {
+    /*
+    *復元アプリ選択ページへと遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

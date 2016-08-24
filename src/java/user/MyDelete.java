@@ -19,6 +19,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class MyDelete extends HttpServlet {
+    
+    /*
+    *ユーザーアカウントの削除確認ページへ遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

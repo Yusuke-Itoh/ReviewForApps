@@ -19,6 +19,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class Registration extends HttpServlet {
+    /*
+    *ユーザーアカウント登録ページへと遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

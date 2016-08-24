@@ -22,6 +22,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class RegistrationComplete extends HttpServlet {
+    /*
+    *ユーザーアカウント登録完了ページへ遷移するサーブレット
+    *データベースにアクセスし、ユーザー情報を追加してアカウント管理を実現する
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

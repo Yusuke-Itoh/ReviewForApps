@@ -25,6 +25,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class SelectApps extends HttpServlet {
+    /*
+    *レビュー閲覧をするアプリの選択ページへと遷移するサーブレット
+    *iTunesAPIに接続し、アートワーク等の情報を取得する。
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

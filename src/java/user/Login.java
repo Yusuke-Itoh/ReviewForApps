@@ -16,11 +16,12 @@ import javax.servlet.http.HttpSession;
 import rfa.Log;
 
 
-/**
- *サーブレット数が多く管理しづらくなってきたのでこのサーブレットではログインだけでなくログアウトも担当させたい。
- *
- */
+
 public class Login extends HttpServlet {
+ /*
+ *非ログイン時にはログインページへと遷移する処理を
+ *ログイン時にはログアウト処理をしてログアウトページへと遷移する処理を行なうサーブレット
+ */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -20,6 +20,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class WriteReviewConfirm extends HttpServlet {
+    /*
+    *投稿レビュー確認ページへ遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

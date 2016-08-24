@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class Ranking extends HttpServlet {
+    /*
+    *ランキングページへと遷移するサーブレット
+    *データベースにアクセスし、ユーザーデータを取得し、ランキングとして表示する準備を行う。
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

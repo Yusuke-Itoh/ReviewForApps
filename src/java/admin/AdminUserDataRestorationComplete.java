@@ -11,7 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
@@ -22,6 +21,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminUserDataRestorationComplete extends HttpServlet {
+    /*
+    *ユーザーデータ復旧完了ページへと遷移するサーブレット
+    *デリートフラグを折ることで表示上のデータ復旧を実現するための準備を行う
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -23,6 +23,11 @@ import rfa.Log;
  * @author maimaimai
  */
 public class WatchReview extends HttpServlet {
+    /*
+    *レビュー閲覧ページのサーブレット
+    *受け取ったappIDnumを使ってDBのreviewテーブルにアクセスし、レビューを取り出してくる。
+    *それをjspページに表示させればOK。ログイン時にはいいねボタンを表示し、ポイント付与機能を与える。
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,11 +43,7 @@ public class WatchReview extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /*
-            *レビュー閲覧ページのサーブレット
-            *受け取ったappIDnumを使ってDBのreviewテーブルにアクセスし、レビューを取り出してくる。
-            *それをjspページに表示させればOK。ログイン時にはいいねボタンを表示し、ポイント付与機能を与える。
-            */
+
             
             //セッションの呼び出し
             HttpSession hs = request.getSession();

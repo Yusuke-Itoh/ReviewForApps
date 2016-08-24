@@ -20,6 +20,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminLogin extends HttpServlet {
+    /*
+    *非ログイン時には管理者ログインページへ、
+    *管理者ログイン時にはログアウト処理を行うサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

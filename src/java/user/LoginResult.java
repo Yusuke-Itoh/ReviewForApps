@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class LoginResult extends HttpServlet {
+    
+    /*
+    *ログイン処理を行うサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

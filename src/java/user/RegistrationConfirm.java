@@ -20,6 +20,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class RegistrationConfirm extends HttpServlet {
+    /*
+    *ユーザーアカウント登録確認ページへと遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

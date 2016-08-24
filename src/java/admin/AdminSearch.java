@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminSearch extends HttpServlet {
+    /*
+    *アプリ検索画面へ遷移するサーブレット
+    *iTunesAPIにアクセスして検索した情報をもらってくる処理を行う。
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

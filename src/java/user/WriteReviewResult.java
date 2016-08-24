@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class WriteReviewResult extends HttpServlet {
+    /*
+    *レビュー投稿完了ページへ遷移するサーブレット
+    *データベースにアクセスし、レビューデータを挿入することで管理できるようにする
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

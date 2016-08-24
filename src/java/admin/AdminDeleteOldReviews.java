@@ -20,6 +20,11 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminDeleteOldReviews extends HttpServlet {
+    
+    /*
+    *旧レビュー削除完了ページへと遷移する
+    *データベースにアクセスし、古いレビューを削除する
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

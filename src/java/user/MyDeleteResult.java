@@ -22,6 +22,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class MyDeleteResult extends HttpServlet {
+    
+    /*
+    *ユーザーアカウントの削除処理（実際にはデリートフラグを立てることで実現している）を行うメソッド
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

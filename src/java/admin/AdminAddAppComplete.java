@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminAddAppComplete extends HttpServlet {
+    /*
+    *アプリ追加処理完了ページへ遷移するサーブレット
+    *データベースにアプリデータを挿入し、管理する
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

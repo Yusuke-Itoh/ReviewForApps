@@ -18,6 +18,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class Index extends HttpServlet {
+    /*
+    *トップページへと遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

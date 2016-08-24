@@ -24,6 +24,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminUserDataRestoration extends HttpServlet {
+    /*
+    *復旧するユーザーデータを選択するページへと遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -23,6 +23,9 @@ import rfa.Log;
  * @author maimaimai
  */
 public class WriteReview extends HttpServlet {
+    /*
+    *レビュー投稿ページに遷移するサーブレット
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

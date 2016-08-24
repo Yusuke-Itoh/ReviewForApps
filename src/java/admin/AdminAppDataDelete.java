@@ -23,6 +23,10 @@ import rfa.Log;
  * @author maimaimai
  */
 public class AdminAppDataDelete extends HttpServlet {
+    /*
+    *アプリデータを削除するサーブレット
+    *デリートフラグを立てて表示の上でのアプリの削除を実現する
+    */
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
