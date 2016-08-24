@@ -55,7 +55,7 @@ public class AdminLogin extends HttpServlet {
 
 
                 //ログに情報を記載
-                //Log.getInstance().log("管理者ログインページに遷移");
+                Log.getInstance().log("管理者ログインページに遷移");
                 request.getRequestDispatcher("/adminlogin.jsp").forward(request, response);
             
             }else{
