@@ -25,7 +25,7 @@ public class DataBeans {
     private String name;//ユーザー名
     private String password;//パスワード
     private String mail;//メールアドレス
-    private int totalPoints;//総購入金額
+    private int totalPoints;//総ポイント
     private int deleteFlg;//削除フラグ
     
     

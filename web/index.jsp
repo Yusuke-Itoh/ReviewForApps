@@ -44,9 +44,8 @@
         <input id="btnSubmit" type="submit" name="btnSubmit" value="ランキング">
         </form>
         <br><br>
-        <form action="MyDelete" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="アカウント削除画面へ">
-        <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+        <form action="MyPage" method="POST">
+        <input id="btnSubmit" type="submit" name="btnSubmit" value="マイページへ">
         </form>
         <%}%>
         <br>

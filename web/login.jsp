@@ -46,7 +46,7 @@
             </form>
             
         <form action="Registration" method="POST">
-            <input id="btnSubmit" type="submit" name="btnSubmit2" value="新規会員登録">
+            <input id="btnSubmit" type="submit" name="btnSubmit" value="新規会員登録">
             <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
         </form>
         

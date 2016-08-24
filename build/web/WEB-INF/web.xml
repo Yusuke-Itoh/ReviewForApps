@@ -104,6 +104,10 @@
         <servlet-name>AdminUserDataRestorationComplete</servlet-name>
         <servlet-class>admin.AdminUserDataRestorationComplete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyPage</servlet-name>
+        <servlet-class>user.MyPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SelectApps</servlet-name>
         <url-pattern>/SelectApps</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>AdminUserDataRestorationComplete</servlet-name>
         <url-pattern>/AdminUserDataRestorationComplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyPage</servlet-name>
+        <url-pattern>/MyPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
