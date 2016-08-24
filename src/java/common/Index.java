@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import rfa.Log;
 
 /**
  *
@@ -33,7 +34,7 @@ public class Index extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             //トップページに戻ってきた時用のページ
-            //Log.getInstance().log("トップページへ遷移");
+            Log.getInstance().log("トップページへ遷移");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         } finally {
             out.close();

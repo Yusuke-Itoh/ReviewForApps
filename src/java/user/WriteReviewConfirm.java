@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import beans.DataBeans;
+import rfa.Log;
 
 /**
  *
@@ -53,7 +54,8 @@ public class WriteReviewConfirm extends HttpServlet {
             hs.setAttribute("reviewInfo", reviewInfo);
             System.out.println("Session updated!!");
             
-            
+            //ログに書き込み
+            Log.getInstance().log("投稿確認ページへ遷移");
             request.getRequestDispatcher("writereviewconfirm.jsp").forward(request, response);
             
         }catch(Exception e){

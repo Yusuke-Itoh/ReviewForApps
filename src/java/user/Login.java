@@ -5,6 +5,7 @@
  */
 package user;
 
+import beans.DataBeans;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import rfa.Log;
 
 
 /**
@@ -35,17 +37,40 @@ public class Login extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             
-            //ユーザー認証が必要なページへのアクセスルートチェックのためのランダムな数字を用意
+            //セッションの呼び出し
             HttpSession hs = request.getSession();
-            hs.setAttribute("ac", (int) (Math.random() * 1000));
             
-            //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
-            String page =request.getHeader("Referer").substring(36);
-            hs.setAttribute("page",page);
-                        
+            //ユーザー情報を入れるudを呼び出す。
+            DataBeans ud = (DataBeans)hs.getAttribute("ud");
+            
+            //ログイン処理かログアウト処理かの判断
+            if(ud == null){
+                //以下ログイン時の処理
+
+                //ユーザー認証が必要なページへのアクセスルートチェックのためのランダムな数字を用意
+                hs.setAttribute("ac", (int) (Math.random() * 1000));
+
+                //ログイン後に遷移するために前のページ情報を取得してセッションに格納しておく。
+                String page =request.getHeader("Referer").substring(36);
+                hs.setAttribute("page",page);
+
+                //ログに情報を記載
+                Log.getInstance().log("ログインページに遷移");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            
+            }else{
+            //以下ログアウト時の処理
+            
+            //セッションの削除
+            hs.removeAttribute("ud");
+            hs.removeAttribute("ac");
+            //レビュー投稿のセッションにもユーザー情報が含まれているのでreviewInfoも取り除く
+            hs.removeAttribute("reviewInfo");
+            
             //ログに情報を記載
-            //Log.getInstance().log("ログインページに遷移");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            Log.getInstance().log("ログアウト完了");
+            request.getRequestDispatcher("/logout.jsp").forward(request, response);                 
+            }
             
             
         } finally {

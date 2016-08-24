@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import rfa.Log;
 
 /**
  *
@@ -42,7 +43,7 @@ public class Registration extends HttpServlet {
             }
 
             //ログに情報を記載
-            //Log.getInstance().log("会員登録ページへ遷移");
+            Log.getInstance().log("会員登録ページへ遷移");
             request.getRequestDispatcher("registration.jsp").forward(request, response);
             }catch(Exception e){
                 //何らかの理由で失敗したらエラーページにエラー文を渡して表示。想定は不正なアクセスとDBエラー

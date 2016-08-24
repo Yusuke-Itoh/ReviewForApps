@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -56,6 +57,8 @@ public class AdminDeletedAppDataRestorationComplete extends HttpServlet {
             hs.removeAttribute("appInfo");
             hs.removeAttribute("appData");
             
+            //ログに書き込み
+            Log.getInstance().log("アプリ復元処理完了");
             request.getRequestDispatcher("/admindeletedappdatarestorationcomplete.jsp").forward(request, response);
             
             

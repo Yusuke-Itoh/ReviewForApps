@@ -15,29 +15,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <header>
         <%if(ud == null && ad != null){%>
-        <div style="display:inline-flex">
-        管理者<%=ad.getName()%>さん。ただいまログイン中です。
-        <form action="AdminLogout" method="POST">
-        <input type="submit" name="btnSubmit" value="管理者ログアウト">
-        </form>
-        </div>
-        <hr>
+            <div style="display:inline-flex">
+            管理者<%=ad.getName()%>さん。ただいまログイン中です。
+            <form action="AdminLogin" method="POST">
+            <input type="submit" name="btnSubmit" value="管理者ログアウト">
+            </form>
+            </div>
+            <hr>
         <%}%>        
         <%if(ud == null && ad == null){%>
-        <div style="display:inline-flex">
-        <form action="Login" method="POST">
-        <input type="submit" name="btnSubmit" value="ログイン">
-        </form>
-        </div>
-        <hr>
+            <div style="display:inline-flex">
+            <form action="Login" method="POST">
+            <input type="submit" name="btnSubmit" value="ログイン">
+            </form>
+            </div>
+            <hr>
        
         <%}if(ud != null){%>
-        <div style="display:inline-flex">
-        こんにちは、<%=ud.getName()%>さん。ただいまログイン中です。
-        <form action="Logout" method="POST">
-        <input type="submit" name="btnSubmit" value="ログアウト">
-        </form>
-        </div>
-        <hr>
+            <div style="display:inline-flex">
+            こんにちは、<%=ud.getName()%>さん。ただいまログイン中です。
+            <form action="Login" method="POST">
+            <input type="submit" name="btnSubmit" value="ログアウト">
+            </form>
+            </div>
+            <hr>
         <%}%>
+        
 </header>

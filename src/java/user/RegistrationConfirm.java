@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import beans.DataBeans;
+import rfa.Log;
 
 /**
  *
@@ -49,7 +50,7 @@ public class RegistrationConfirm extends HttpServlet {
             System.out.println("Session updated!!");
             
             //ログに情報を記載
-            //Log.getInstance().log("会員登録確認ページへ遷移");
+            Log.getInstance().log("会員登録確認ページへ遷移");
             request.getRequestDispatcher("/registrationconfirm.jsp").forward(request, response);
             }catch(Exception e){
             request.setAttribute("error", e.getMessage());

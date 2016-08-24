@@ -5,7 +5,6 @@
  */
 package admin;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
@@ -17,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.AccessAPI;
 import beans.DataBeans;
+import rfa.Log;
 
 /**
  *
@@ -53,6 +53,10 @@ public class AdminSearch extends HttpServlet {
             
             //セッションに格納
             hs.setAttribute("searchResult", searchResult);
+            
+            //ログに書き込み
+            Log.getInstance().log("管理者アプリ検索ページへ遷移");
+            
             request.getRequestDispatcher("adminsearch.jsp").forward(request, response);
             
         } finally {

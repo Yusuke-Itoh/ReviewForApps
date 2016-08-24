@@ -7,7 +7,6 @@ package user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -57,9 +57,8 @@ public class PointAdd extends HttpServlet {
             DataBeansDAO dao = new DataBeansDAO();
             dao.pointAdd(dto);
             
-            //request.getRequestDispatcher("/pointadd.jsp").forward(request, response);
-            //セッションの呼び出し
-            
+            //ログに書き込み
+            Log.getInstance().log("ポイント追加処理完了");
             //一つ前の操作をしていたページにリダイレクト
             response.sendRedirect(String.valueOf(hs.getAttribute("page")));
         

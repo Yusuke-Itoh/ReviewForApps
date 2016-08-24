@@ -1,6 +1,6 @@
 <%-- 
     Document   : logout
-    Created on : 2016/08/12, 16:27:04
+    Created on : 2016/08/19, 10:55:54
     Author     : maimaimai
 --%>
 <%@page import="rfa.JumsHelper"%>
@@ -13,7 +13,7 @@
         <title>ログアウト</title>
     </head>
     <body>
-        ログアウトしました
+        <p>ログアウトしました</p>
         <div id="div"><%=jh.home()%></div>
     </body>
 </html>

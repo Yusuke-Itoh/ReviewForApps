@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -56,6 +57,8 @@ public class Ranking extends HttpServlet {
             //revInfoをセッションに格納
             hs.setAttribute("rankingList", rankingList);
             
+            //ログに書き込み
+            Log.getInstance().log("ランキングページへ遷移");
             request.getRequestDispatcher("ranking.jsp").forward(request, response);
             
             

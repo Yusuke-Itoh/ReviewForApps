@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -43,17 +44,19 @@ public class AdminUserDataRestoration extends HttpServlet {
             ArrayList <DataBeans> deletedUserInfo= new <DataBeans>ArrayList();
             
             //DBからstoreIDを取得、iTunesのLookupAPIで画像データ、名前を習得
-                DataBeansDAO dao = new DataBeansDAO();
-                ArrayList<DataBeansDTO> userList= dao.getDeletedUserData();
+            DataBeansDAO dao = new DataBeansDAO();
+            ArrayList<DataBeansDTO> userList= dao.getDeletedUserData();
 
-                //DTO2DTmappingしてDataBeans型にし、取り出した情報をセッションで持ちまわせるようにする            
-                for(int i=0;i<userList.size();i++){
+            //DTO2DTmappingしてDataBeans型にし、取り出した情報をセッションで持ちまわせるようにする            
+            for(int i=0;i<userList.size();i++){
                 DataBeans db= new DataBeans();
                 db.DTO2UDMapping(userList.get(i));
                 deletedUserInfo.add(db);            
                 }
-                //appInfoをセッションに格納
-                hs.setAttribute("deletedUserInfo", deletedUserInfo);
+            //appInfoをセッションに格納
+            hs.setAttribute("deletedUserInfo", deletedUserInfo);
+            //ログに書き込み
+            Log.getInstance().log("管理者ユーザー復元ページへ遷移");
             request.getRequestDispatcher("adminuserdatarestoration.jsp").forward(request, response);
             
         }catch(SQLException e){

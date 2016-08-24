@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -77,6 +78,8 @@ public class WatchReview extends HttpServlet {
             //revInfoをセッションに格納
             hs.setAttribute("revList", revList);
             
+            //ログへ書き込み
+            Log.getInstance().log("レビュー閲覧ページへ遷移");
             request.getRequestDispatcher("watchreview.jsp").forward(request, response);
             
             

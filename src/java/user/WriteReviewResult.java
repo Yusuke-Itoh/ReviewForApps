@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -49,7 +50,8 @@ public class WriteReviewResult extends HttpServlet {
             DataBeansDAO dao = new DataBeansDAO();
             dao.reviewPosting(dto);
             
-            
+            //ログに書き込み
+            Log.getInstance().log("レビュー投稿処理完了");
             request.getRequestDispatcher("writereviewresult.jsp").forward(request, response);
             
             }catch(SQLException e){

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -51,6 +52,9 @@ public class AdminAddAppComplete extends HttpServlet {
             //アプリのデータを再取得させるために不必要なセッションを捨てる
             hs.removeAttribute("appInfo");
             hs.removeAttribute("appData");
+            
+            //ログに書き込む
+            Log.getInstance().log("アプリ追加処理完了");
             
             request.getRequestDispatcher("adminaddappcomplete.jsp").forward(request, response);
             

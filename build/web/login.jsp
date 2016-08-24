@@ -4,6 +4,8 @@
     Author     : maimaimai
 --%>
 <%@page import="rfa.JumsHelper"%>
+<%@page import="beans.DataBeans"%>
+
 <%
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();
@@ -13,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ログイン</title>
             <style>
             label,input 
             {

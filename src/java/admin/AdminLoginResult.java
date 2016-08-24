@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -62,18 +63,20 @@ public class AdminLoginResult extends HttpServlet {
                 //ユーザー名、パスワードが正しければDBから要素がとれている。
                 if(adList.size() == 0){
                     //ログに情報を記載
-                    //Log.getInstance().log("不正なログイン");
+                    Log.getInstance().log("不正なログインを確認");
                     request.getRequestDispatcher("/loginerror.jsp").forward(request, response);  
                 }else{
                     //要素をUserDataにマッピング    
                     for(int i=0;i<adList.size();i++){
                         DataBeansDTO udd = adList.get(i);
                         ad.DTO2UDMapping(udd);
+                        
                         hs.setAttribute("ad", ad);
+                        
                             //ログに情報を記載
-                            //Log.getInstance().log("ログイン成功");    
+                            Log.getInstance().log("ログイン成功");    
                             //一つ前の操作をしていたページにリダイレクト
-                                response.sendRedirect(String.valueOf(hs.getAttribute("page")));
+                            response.sendRedirect(String.valueOf(hs.getAttribute("page")));
                             
                             
                     }

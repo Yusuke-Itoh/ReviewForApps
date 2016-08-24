@@ -145,7 +145,7 @@ public class DataBeansDAO {
         PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
-            st =  con.prepareStatement("select * from review where reviewAppID = ?");
+            st =  con.prepareStatement("select * from review where reviewAppID = ? order by Points desc");
             st.setInt(1, ud.getAppID());
             ResultSet rs = st.executeQuery();
             ArrayList<DataBeansDTO> reviewData = new ArrayList();

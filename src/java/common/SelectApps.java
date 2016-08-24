@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import model.AccessAPI;
 import beans.DataBeans;
 import model.GetDataList;
+import rfa.Log;
 
 /**
  *
@@ -60,7 +61,10 @@ public class SelectApps extends HttpServlet {
                        
                         //セッションに格納
                         hs.setAttribute("appData", appData);
-            }                           
+            }
+            
+            //ログへ書き込み
+            Log.getInstance().log("レビュー閲覧アプリ選択ページへ遷移");
             request.getRequestDispatcher("selectapps.jsp").forward(request, response);
             
         }catch(SQLException e){

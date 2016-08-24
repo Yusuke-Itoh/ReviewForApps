@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import model.GetDataList;
+import rfa.Log;
 
 /**
  *
@@ -50,6 +51,8 @@ public class WriteReview extends HttpServlet {
             
             }
             
+            //ログに書き込み
+            Log.getInstance().log("レビュー投稿ページへ遷移");
             request.getRequestDispatcher("writereview.jsp").forward(request, response);
             }catch(SQLException e){
             System.out.println(e.getMessage());

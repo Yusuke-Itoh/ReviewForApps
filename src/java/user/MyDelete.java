@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import rfa.Log;
 
 /**
  *
@@ -41,7 +42,7 @@ public class MyDelete extends HttpServlet {
                 throw new Exception("不正なアクセスです");
             }
             //ログに情報を記載
-            //Log.getInstance().log("ユーザー情報削除ページへ遷移");
+            Log.getInstance().log("ユーザー情報削除ページへ遷移");
             request.getRequestDispatcher("mydelete.jsp").forward(request, response);
 
         }catch(Exception e){

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import beans.DataBeans;
+import rfa.Log;
 
 /**
  *
@@ -45,7 +46,7 @@ public class AdminAddAppConfirm extends HttpServlet {
 
             hs.setAttribute("addAppData",addAppData);
             //ログに情報を記録
-            //Log.getInstance().log("商品詳細ページに遷移");            
+            Log.getInstance().log("商品詳細ページに遷移");            
             
             request.getRequestDispatcher("adminaddappconfirm.jsp").forward(request, response);
 

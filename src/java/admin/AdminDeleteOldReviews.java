@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import beans.DataBeansDAO;
+import rfa.Log;
 
 /**
  *
@@ -40,6 +41,8 @@ public class AdminDeleteOldReviews extends HttpServlet {
             //データベースアクセスして削除処理
             DataBeansDAO.getInstance().adminDeleteOldReviews();
             
+            //ログに書き込み
+            Log.getInstance().log("レビュー削除処理完了");
             request.getRequestDispatcher("admindeleteoldreviews.jsp").forward(request, response);
             
         }catch(SQLException e){

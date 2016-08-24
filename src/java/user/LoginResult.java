@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -62,7 +63,7 @@ public class LoginResult extends HttpServlet {
                 //ユーザー名、パスワードが正しければDBから要素がとれている。
                 if(udList.size() == 0){
                     //ログに情報を記載
-                    //Log.getInstance().log("不正なログイン");
+                    Log.getInstance().log("不正なログイン");
                     request.getRequestDispatcher("/loginerror.jsp").forward(request, response);  
                 }else{
                     //要素をUserDataにマッピング    
@@ -74,13 +75,13 @@ public class LoginResult extends HttpServlet {
                             if(ud.getDeleteFlg() == 0){
                                 hs.setAttribute("ud", ud);
                             //ログに情報を記載
-                            //Log.getInstance().log("ログイン成功");    
+                            Log.getInstance().log("ログイン成功");    
                             //一つ前の操作をしていたページにリダイレクト
                                 response.sendRedirect(String.valueOf(hs.getAttribute("page")));
                             
                             }else{    
                                 //ログに情報を記載
-                                //Log.getInstance().log("削除されたアカウントのためアクセスできませんでした");
+                                Log.getInstance().log("削除されたアカウントのためアクセスできませんでした");
                                 //既に削除されているユーザーの処理
                                 request.getRequestDispatcher("/deleteduser.jsp").forward(request, response);
                             }

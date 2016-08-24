@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -51,6 +52,8 @@ public class AdminUserDataRestorationComplete extends HttpServlet {
             //DBへの復元処理
             DataBeansDAO.getInstance().deletedUserDataRestoration(userID);
             
+            //ログに書き込み
+            Log.getInstance().log("ユーザー復元処理完了");
             request.getRequestDispatcher("/adminuserdatarestorationcomplete.jsp").forward(request, response);
             
             

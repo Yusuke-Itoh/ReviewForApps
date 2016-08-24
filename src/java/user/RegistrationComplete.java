@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -62,7 +63,7 @@ public class RegistrationComplete extends HttpServlet {
             hs.removeAttribute("newAc");
 
             //ログに情報を記載
-            //Log.getInstance().log("会員登録完了");
+            Log.getInstance().log("会員登録完了");
             
             request.getRequestDispatcher("registrationcomplete.jsp").forward(request, response);
             

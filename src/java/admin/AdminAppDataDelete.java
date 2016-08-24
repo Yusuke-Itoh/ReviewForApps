@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import beans.DataBeans;
 import beans.DataBeansDAO;
 import beans.DataBeansDTO;
+import rfa.Log;
 
 /**
  *
@@ -55,6 +56,9 @@ public class AdminAppDataDelete extends HttpServlet {
             //セッションの削除
             hs.removeAttribute("appInfo");
             hs.removeAttribute("appData");
+            
+            //ログに書き込み
+            Log.getInstance().log("アプリ削除処理完了");
             
             request.getRequestDispatcher("/adminappdatadelete.jsp").forward(request, response);
             
