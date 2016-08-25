@@ -24,6 +24,7 @@ public class DataBeansDAO {
         return new DataBeansDAO();
     }
     
+    //アプリデータをデータベースから取り出すメソッド
     public ArrayList<DataBeansDTO> getAppData() throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
@@ -54,10 +55,10 @@ public class DataBeansDAO {
         }
     }
     
-            //ユーザーデータ登録時に用いるメソッド
-        public void reviewPosting(DataBeansDTO dto) throws SQLException{
-            Connection con = null;
-            PreparedStatement st = null;
+    //ユーザーデータ登録時に用いるメソッド
+    public void reviewPosting(DataBeansDTO dto) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
             st =  con.prepareStatement("INSERT INTO Review(userID,reviewAppID,reviewTitle,review,newDate) VALUES(?,?,?,?,?)");
@@ -79,10 +80,10 @@ public class DataBeansDAO {
 
     }
         
-        //ユーザーデータ登録時に用いるメソッド
-        public void MakeAccount(DataBeansDTO ud) throws SQLException{
-            Connection con = null;
-            PreparedStatement st = null;
+    //ユーザーデータ登録時に用いるメソッド
+    public void MakeAccount(DataBeansDTO ud) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
             st =  con.prepareStatement("INSERT INTO user_t(userName,password,mail,newDate) VALUES(?,?,?,?)");
@@ -102,8 +103,8 @@ public class DataBeansDAO {
         }
 
     }
-        //ユーザーのログイン処理を実現するメソッド
-        public ArrayList<DataBeansDTO> forLogin(DataBeansDTO ud) throws SQLException{
+    //ユーザーのログイン処理を実現するメソッド
+    public ArrayList<DataBeansDTO> forLogin(DataBeansDTO ud) throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -139,8 +140,8 @@ public class DataBeansDAO {
         }
     }
         
-        //レビュー表示のための検索処理
-        public ArrayList<DataBeansDTO> SearchReview(DataBeansDTO ud) throws SQLException{
+    //レビュー表示のための検索処理
+    public ArrayList<DataBeansDTO> SearchReview(DataBeansDTO ud) throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -174,8 +175,8 @@ public class DataBeansDAO {
         }
     }
         
-        //購入処理時の総金額の更新を行うメソッド
-        public void pointAdd(DataBeansDTO ud) throws SQLException{
+    //購入処理時の総金額の更新を行うメソッド
+    public void pointAdd(DataBeansDTO ud) throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -197,8 +198,8 @@ public class DataBeansDAO {
         }
     }
     
-        //ランキング情報のために総取得ポイントでソートしたユーザー情報を取得するメソッド
-        public ArrayList<DataBeansDTO> getRankingData() throws SQLException{
+    //ランキング情報のために総取得ポイントでソートしたユーザー情報を取得するメソッド
+    public ArrayList<DataBeansDTO> getRankingData() throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -227,8 +228,8 @@ public class DataBeansDAO {
         }
     }
         
-        //管理者のログイン処理を実現するメソッド
-        public ArrayList<DataBeansDTO> forAdminLogin(DataBeansDTO ud) throws SQLException{
+    //管理者のログイン処理を実現するメソッド
+    public ArrayList<DataBeansDTO> forAdminLogin(DataBeansDTO ud) throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -259,9 +260,9 @@ public class DataBeansDAO {
     }
         
         //管理者がアプリの追加を行うメソッド
-        public void adminAddApp(DataBeansDTO ud) throws SQLException{
-            Connection con = null;
-            PreparedStatement st = null;
+    public void adminAddApp(DataBeansDTO ud) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
             st =  con.prepareStatement("insert into app_t(appName,publisher,storeID) VALUES(?,?,?)");
@@ -286,7 +287,7 @@ public class DataBeansDAO {
         *管理者権限によるレビューの削除処理を行うメソッド
         *14日を過ぎたレビューは削除対象とし、管理者の削除行為によって対象のレビューはすべて削除される。
         */
-            public void adminDeleteOldReviews()throws SQLException{
+    public void adminDeleteOldReviews()throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -427,8 +428,8 @@ public class DataBeansDAO {
             }
         }
     }    
-    
-        public ArrayList<DataBeansDTO> getDeletedUserData() throws SQLException{
+    //データベースからデリートフラグが起動済みのユーザーデータを取得するメソッド
+    public ArrayList<DataBeansDTO> getDeletedUserData() throws SQLException{
         Connection con = null;
         PreparedStatement st = null;
         try{
@@ -455,11 +456,11 @@ public class DataBeansDAO {
             }
         }
     }
-        //管理者が個別にレビューの削除を行うメソッド
-        //必要ないかも？
-        public void adminDeleteReview(DataBeansDTO ud) throws SQLException{
-            Connection con = null;
-            PreparedStatement st = null;
+    //管理者が個別にレビューの削除を行うメソッド
+    //必要ないかも？
+    public void adminDeleteReview(DataBeansDTO ud) throws SQLException{
+        Connection con = null;
+        PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
             st =  con.prepareStatement("delete from review where reviewID = ?");

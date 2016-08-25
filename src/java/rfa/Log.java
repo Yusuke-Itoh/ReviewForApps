@@ -19,6 +19,9 @@ public class Log {
         public static Log getInstance(){
         return new Log();
     }
+        /*
+        *ログへの記述処理を用意するクラス
+        */
     
     public void log(String text) throws IOException{
         Date d = new Date();

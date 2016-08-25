@@ -19,6 +19,10 @@ public class GetDataList {
     public static GetDataList getInstance(){
         return new GetDataList();
     }
+    
+    /*
+    *データベースからのデータ取得をまとめたクラス
+    */
 
 
     //DB内のアプリデータを取得するメソッド

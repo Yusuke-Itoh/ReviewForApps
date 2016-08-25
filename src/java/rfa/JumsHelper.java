@@ -13,6 +13,10 @@ import java.util.ArrayList;
  */
 public class JumsHelper {
     
+    /*
+    *画面表示をサポートするクラス
+    */
+    
          //トップへのリンクを定数として設定
     private final String homeURL = "index.jsp";
     
