@@ -29,8 +29,11 @@ td {
 <body>
     <table>
         <tr>
-            <td><img src="<%=appData.getImg()%>" alt=""></td>
-            <td><%=appData.getAppName()%><br>
+            <td>
+                <img src="<%=appData.getImg()%>" alt="">
+            </td>
+            <td>
+                <%=appData.getAppName()%><br>
                 <%=appData.getPublisher()%><br>
                 レビュー点数：<%=appData.getRate()%>
             </td>
@@ -38,7 +41,7 @@ td {
     </table>                    
             <br><br>
         <form action="AdminAddAppComplete" method="POST">
-        <input type="submit" name="btnSubmit" value="追加">
+            <input type="submit" name="btnSubmit" value="追加">
         </form>
         <br>
         <a href="javascript:history.back();">戻る</a><br><br>

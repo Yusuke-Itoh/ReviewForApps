@@ -15,12 +15,12 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <footer>
-        <hr>
-        <%if(ud == null && ad == null){%>
-        <div style="display:inline-flex">
-        <form action="AdminLogin" method="POST">
-        <input type="submit" name="btnSubmit" value="管理者ログイン">
-        </form>
-        </div>
-        <%}%>
+            <hr>
+            <%if(ud == null && ad == null){%>
+                <div style="display:inline-flex">
+                <form action="AdminLogin" method="POST">
+                <input type="submit" name="btnSubmit" value="管理者ログイン">
+                </form>
+                </div>
+            <%}%>
         </footer>

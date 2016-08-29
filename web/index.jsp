@@ -12,7 +12,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-       <jsp:include page="header.jsp" flush="true" />
+    <jsp:include page="header.jsp" flush="true" />
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ReviewForApp</title>
@@ -31,42 +31,42 @@
     </head>
     <body>
         <form action="SelectApps" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="レビューを見る">
+            <input id="btnSubmit" type="submit" name="btnSubmit" value="レビューを見る">
         </form>
         <%if(ud != null){%>
-        <br>
-        <br>
-        <form action="WriteReview" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="レビューを書く">
-        </form>
-        <br><br>
-        <form action="Ranking" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="ランキング">
-        </form>
-        <br><br>
-        <form action="MyPage" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="マイページへ">
-        </form>
+            <br>
+            <br>
+            <form action="WriteReview" method="POST">
+                <input id="btnSubmit" type="submit" name="btnSubmit" value="レビューを書く">
+            </form>
+            <br><br>
+            <form action="Ranking" method="POST">
+                <input id="btnSubmit" type="submit" name="btnSubmit" value="ランキング">
+            </form>
+            <br><br>
+            <form action="MyPage" method="POST">
+                <input id="btnSubmit" type="submit" name="btnSubmit" value="マイページへ">
+            </form>
         <%}%>
         <br>
         <!--管理者用-->
         <%if(ad != null){%>
-        <br>
-        <br>
-        <form action="AdminSearch" method="GET">
-        検索キーワード入力:<input type="text" name="term" value="">      
-        <input type="submit" name="btnSubmit" value="検索">
-        </form>
-        <p><input type="button" value="古いレビューを削除" onClick="disp()"></p>
-        
-        <form action="AdminDeletedAppDataRestoration" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="削除したアプリデータを復元する">
-        </form>
-        <br>
-        <form action="AdminUserDataRestoration" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="ユーザーデータの復元">
-        </form>
+            <br>
+            <br>
+            <form action="AdminSearch" method="GET">
+                検索キーワード入力:<input type="text" name="term" value="">      
+                <input type="submit" name="btnSubmit" value="検索">
+            </form>
+            <p><input type="button" value="古いレビューを削除" onClick="disp()"></p>
+
+            <form action="AdminDeletedAppDataRestoration" method="POST">
+                <input id="btnSubmit" type="submit" name="btnSubmit" value="削除したアプリデータを復元する">
+            </form>
+            <br>
+            <form action="AdminUserDataRestoration" method="POST">
+                <input id="btnSubmit" type="submit" name="btnSubmit" value="ユーザーデータの復元">
+            </form>
         <%}%>       
     </body>
-    　　<jsp:include page="footer.jsp" flush="true" />
+    <jsp:include page="footer.jsp" flush="true" />
 </html>

@@ -77,8 +77,11 @@
     </div>
         <table>
             <tr>
-                <td><img src="<%=appData.get(appIDnum.getAppID()-1).getImg()%>" alt=""></td>   
-                <td><%=appData.get(appIDnum.getAppID()-1).getAppName()%>
+                <td>
+                    <img src="<%=appData.get(appIDnum.getAppID()-1).getImg()%>" alt="">
+                </td>   
+                <td>
+                    <%=appData.get(appIDnum.getAppID()-1).getAppName()%>
                     <br>
                     <%=appData.get(appIDnum.getAppID()-1).getPublisher()%>
                     <br><br>
@@ -86,34 +89,33 @@
                 </td>
             </tr>
         </table>
-                <hr>
-        
+                <hr>        
         <%for(int i=0;i<revList.size();i++){%>
-        <table>
-            <tr>
-                <td>レビュータイトル：<%=revList.get(i).getReviewTitle()%></td>
-            </tr>
-            <tr>
-                <td>
-                <div style="display:inline-flex">
-                    獲得ポイント：<%=revList.get(i).getPoints()%>
-            <!--未ログイン時と、自分のレビューには評価ボタンを表示しないようにする。-->
-            <%if(ud != null && ud.getUserID() != revList.get(i).getUserID()){%>
-                <form action="PointAdd" method="POST">
-                <input id="btnSubmit" type="submit" name="submit" value="いいね！"  onclick="FreezeScreen('Your Data is Being Processed...');">
-                <input hidden name="UserID" value="<%=revList.get(i).getUserID()%>">
-                <input hidden name="ReviewID" value="<%=revList.get(i).getReviewID()%>">
-                </form>
-                <%}%>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>本文：<%=revList.get(i).getReview()%></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td>レビュータイトル：<%=revList.get(i).getReviewTitle()%></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display:inline-flex">
+                            獲得ポイント：<%=revList.get(i).getPoints()%>
+                            <!--未ログイン時と、自分のレビューには評価ボタンを表示しないようにする。-->
+                            <%if(ud != null && ud.getUserID() != revList.get(i).getUserID()){%>
+                                <form action="PointAdd" method="POST">
+                                    <input id="btnSubmit" type="submit" name="submit" value="いいね！"  onclick="FreezeScreen('更新中...');">
+                                    <input hidden name="UserID" value="<%=revList.get(i).getUserID()%>">
+                                    <input hidden name="ReviewID" value="<%=revList.get(i).getReviewID()%>">
+                                </form>
+                            <%}%>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>本文：<%=revList.get(i).getReview()%></td>
+                </tr>
+            </table>
             <br>
-            <%}%>
+        <%}%>
         <br>
         <%=jh.home()%>
     </body>

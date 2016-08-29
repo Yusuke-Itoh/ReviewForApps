@@ -43,7 +43,7 @@
             <label for="password">パスワード</label><input id="password" name="password"><br />
             <input id="btnSubmit" type="submit" name="btnSubmit" value="ログイン"><br>
             <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
-            </form>
+        </form>
             
         <form action="Registration" method="POST">
             <input id="btnSubmit" type="submit" name="btnSubmit" value="新規会員登録">

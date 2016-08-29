@@ -19,14 +19,14 @@
     </head>
     <body>
         <form action="AdminDeletedAppDataRestorationComplete" method="POST">
-        作品選択
-        <select name="appID">
-            <option value="0">作品名を選択してください。</option>
-            <% for(int i=0;i<deletedAppInfo.size();i++){ %>
-            <option value="<%=deletedAppInfo.get(i).getAppID()%>"><%=deletedAppInfo.get(i).getAppName()%></option>
-            <%}%>
-        </select>
-        <input type="submit" name="btnSubmit" value="復元する">
+            作品選択
+            <select name="appID">
+                <option value="0">作品名を選択してください。</option>
+                <% for(int i=0;i<deletedAppInfo.size();i++){ %>
+                <option value="<%=deletedAppInfo.get(i).getAppID()%>"><%=deletedAppInfo.get(i).getAppName()%></option>
+                <%}%>
+            </select>
+            <input type="submit" name="btnSubmit" value="復元する">
         </form>
         <br>
         <%=jh.home()%>

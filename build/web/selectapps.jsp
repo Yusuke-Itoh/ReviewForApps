@@ -34,18 +34,21 @@ td {
          <%for(int i=0;i<appData.size();i++){%>
         
             <tr>
-                <td><img src="<%=appData.get(i).getImg()%>" alt=""></td>   
-                <td><a href="WatchReview?appIDnum=<%=i+1%>"><%=appData.get(i).getAppName()%></a>
+                <td>
+                    <img src="<%=appData.get(i).getImg()%>" alt="">
+                </td>   
+                <td>
+                    <a href="WatchReview?appIDnum=<%=i+1%>"><%=appData.get(i).getAppName()%></a>
                     <br>
                     <%=appData.get(i).getPublisher()%>
                 </td>
                 <%if(ad != null){%>
-                <td>
-                    <form action="AdminAppDataDelete" method="POST">
-                    <input id="btnSubmit" type="submit" name="btnSubmit" value="アプリを削除" onClick="disp()">
-                    <input type="hidden" name="appID"  value="<%=appInfo.get(i).getAppID()%>">
-                    </form>
-                </td>
+                    <td>
+                        <form action="AdminAppDataDelete" method="POST">
+                            <input id="btnSubmit" type="submit" name="btnSubmit" value="アプリを削除" onClick="disp()">
+                            <input type="hidden" name="appID"  value="<%=appInfo.get(i).getAppID()%>">
+                        </form>
+                    </td>
                 <%}%>
             </tr>
         <%}%>

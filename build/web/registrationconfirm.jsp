@@ -21,18 +21,18 @@
     </head>
     <body>
         <% if(chkList.size()==0){ %>
-        <h1>登録確認</h1>
-        名前:<%= newAc.getName()%><br>
-        パスワード:<%= newAc.getPassword()%><br>
-        メールアドレス:<%= newAc.getMail()%><br>
-        上記の内容で登録します。よろしいですか？
-        <form action="RegistrationComplete" method="POST">
-            <input type="submit" name="yes" value="はい">
-            <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
-        </form>
+            <h1>登録確認</h1>
+            名前:<%= newAc.getName()%><br>
+            パスワード:<%= newAc.getPassword()%><br>
+            メールアドレス:<%= newAc.getMail()%><br>
+            上記の内容で登録します。よろしいですか？
+            <form action="RegistrationComplete" method="POST">
+                <input type="submit" name="yes" value="はい">
+                <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+            </form>
         <% }else{ %>
-        <h1>入力が不完全です。</h1>
-        <%=jh.chkInputAcc(chkList) %><br>
+            <h1>入力が不完全です。</h1>
+            <%=jh.chkInputAcc(chkList) %><br>
         <% } %><br>
         <form action="Registration" method="POST">
             <input type="submit" name="no" value="登録画面に戻る">

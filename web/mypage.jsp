@@ -24,8 +24,8 @@
         獲得ポイント：<%=ud.getTotalPoints()%><br>
         <br>
         <form action="MyDelete" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="アカウント削除画面へ">
-        <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+            <input id="btnSubmit" type="submit" name="btnSubmit" value="アカウント削除画面へ">
+            <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
         </form>
         <br><br>
         <%=jh.home()%>       

@@ -34,12 +34,12 @@ td {
             <td>ユーザー名</td>
             <td>獲得ポイント</td>
             <%for(int i=0;i<rankingList.size();i++){%>
-            <tr>
-                <td><%=i+1%>位</td>   
-                <td><%=rankingList.get(i).getName()%></td>
-                <td><%=rankingList.get(i).getTotalPoints()%></td>
-            </tr>
-        <%}%>
+                <tr>
+                    <td><%=i+1%>位</td>   
+                    <td><%=rankingList.get(i).getName()%></td>
+                    <td><%=rankingList.get(i).getTotalPoints()%></td>
+                </tr>
+            <%}%>
         </table>
         <br>
         <%=jh.home()%>

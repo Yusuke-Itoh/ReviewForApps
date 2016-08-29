@@ -30,7 +30,7 @@
         <select name="ReviewApp">
             <option value="0">作品名を選択してください。</option>
             <% for(int i=0;i<appInfo.size();i++){ %>
-            <option value="<%=appInfo.get(i).getAppID()%>"
+                <option value="<%=appInfo.get(i).getAppID()%>"
                 <%if(reinput && reviewInfo.getAppID() == appInfo.get(i).getAppID())
                     {out.print("selected = \"selected\"");}%>><%=appInfo.get(i).getAppName()%></option>
             <%}%>

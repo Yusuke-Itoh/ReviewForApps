@@ -23,18 +23,18 @@
     </head>
     <body>
         <% if(chkList.size() == 0){ %>
-        <h2>登録確認</h2>
-        アプリ名:<%= appInfo.get(reviewInfo.getAppID() -1).getAppName()%><br>
-        タイトル:<%= reviewInfo.getReviewTitle()%><br>
-        本文:<%= reviewInfo.getReview()%><br>
-        上記の内容で登録します。よろしいですか？
-        <br><br>
-        <form action="WriteReviewResult" method="POST">
-            <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
-            <input type="submit" name="yes" value="はい">
-        </form><% }else{ %>
-        <h1>入力が不完全です。</h1>
-        <%=jh.chkInputRev(chkList) %><br>
+            <h2>登録確認</h2>
+            アプリ名:<%= appInfo.get(reviewInfo.getAppID() -1).getAppName()%><br>
+            タイトル:<%= reviewInfo.getReviewTitle()%><br>
+            本文:<%= reviewInfo.getReview()%><br>
+            上記の内容で登録します。よろしいですか？
+            <br><br>
+            <form action="WriteReviewResult" method="POST">
+                <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+                <input type="submit" name="yes" value="はい">
+            </form><% }else{ %>
+            <h1>入力が不完全です。</h1>
+            <%=jh.chkInputRev(chkList) %><br>
         <% } %><br>
         <form action="WriteReview" method="POST">
             <input type="submit" name="no" value="登録画面に戻る">

@@ -35,12 +35,12 @@
         アカウントを削除しますか？
         <br><br>
         <form action="MyDeleteResult" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="はい">
-        <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
+            <input id="btnSubmit" type="submit" name="btnSubmit" value="はい">
+            <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>">
         </form>
         <br>
         <form action="Index" method="POST">
-        <input id="btnSubmit" type="submit" name="btnSubmit" value="いいえ">
+            <input id="btnSubmit" type="submit" name="btnSubmit" value="いいえ">
         </form>
         <br><br>
         <%=jh.home()%>

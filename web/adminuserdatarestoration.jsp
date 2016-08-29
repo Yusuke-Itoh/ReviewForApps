@@ -20,13 +20,13 @@
     <body>
         <form action="AdminUserDataRestorationComplete" method="POST">
         作品選択
-        <select name="userID">
-            <option value="0">ユーザーを選択してください。</option>
-            <% for(int i=0;i<deletedUserInfo.size();i++){ %>
-            <option value="<%=deletedUserInfo.get(i).getUserID()%>">ID:<%=deletedUserInfo.get(i).getUserID()%>,<%=deletedUserInfo.get(i).getName()%></option>
-            <%}%>
-        </select>
-        <input type="submit" name="btnSubmit" value="復元する">
+            <select name="userID">
+                <option value="0">ユーザーを選択してください。</option>
+                <% for(int i=0;i<deletedUserInfo.size();i++){ %>
+                <option value="<%=deletedUserInfo.get(i).getUserID()%>">ID:<%=deletedUserInfo.get(i).getUserID()%>,<%=deletedUserInfo.get(i).getName()%></option>
+                <%}%>
+            </select>
+            <input type="submit" name="btnSubmit" value="復元する">
         </form>
         <br>
         <%=jh.home()%>
