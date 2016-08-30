@@ -19,14 +19,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>レビューアプリ選択ページ</title>
-               <style>
-table {
-	border-collapse: collapse;
-}
-td {
-	border: solid 1px;
-	padding: 0.5em;
-}
+        <style>
+            table {
+                    border-collapse: collapse;
+            }
+            td {
+                    border: solid 1px;
+                    padding: 0.5em;
+            }
         </style>
     </head>
     <body>

@@ -204,7 +204,7 @@ public class DataBeansDAO {
         PreparedStatement st = null;
         try{
             con = DBManager.getConnection();
-            st =  con.prepareStatement("select userName,totalPoints from user_t where deleteFlg = 0 order by totalPoints desc");
+            st =  con.prepareStatement("select userName,totalPoints from user_t where deleteFlg = 0 order by totalPoints desc limit 30");
             ResultSet rs = st.executeQuery();
             ArrayList<DataBeansDTO> rankingInfo = new ArrayList();
             

@@ -24,50 +24,50 @@
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
         <script type="text/javascript" src="js/doubleclick.js"></script>
     <style type="text/css">
-   .FreezePaneOff
-   {
-      visibility: hidden;
-      display: none;
-      position: absolute;
-      top: -100px;
-      left: -100px;
-   }
+        .FreezePaneOff
+        {
+           visibility: hidden;
+           display: none;
+           position: absolute;
+           top: -100px;
+           left: -100px;
+        }
 
-   .FreezePaneOn
-   {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      visibility: visible;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: #666;
-      z-index: 999;
-      filter:alpha(opacity=85);
-      -moz-opacity:0.85;
-      padding-top: 20%;
-   }
+        .FreezePaneOn
+        {
+           position: absolute;
+           top: 0px;
+           left: 0px;
+           visibility: visible;
+           display: block;
+           width: 100%;
+           height: 100%;
+           background-color: #666;
+           z-index: 999;
+           filter:alpha(opacity=85);
+           -moz-opacity:0.85;
+           padding-top: 20%;
+        }
 
-   .InnerFreezePane
-   {
-      text-align: center;
-      width: 66%;
-      background-color: #171;
-      color: White;
-      font-size: large;
-      border: dashed 2px #111;
-      padding: 9px;
-   }
+        .InnerFreezePane
+        {
+           text-align: center;
+           width: 66%;
+           background-color: #171;
+           color: White;
+           font-size: large;
+           border: dashed 2px #111;
+           padding: 9px;
+        }
     </style>
     <style>
-    table {
-            border-collapse: collapse;
-    }
-    td {
-            border: solid 1px;
-            padding: 0.5em;
-    }
+        table {
+                border-collapse: collapse;
+        }
+        td {
+                border: solid 1px;
+                padding: 0.5em;
+        }
     </style>
     <script type="text/javascript" src="js/doubleclick.js"></script>
     </head>

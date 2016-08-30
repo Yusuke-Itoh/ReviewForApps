@@ -15,24 +15,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
             <style>
-            label,input 
-            {
-                display: block;
-                width: 150px;
-                float: left;
-                margin-bottom: 10px;
-            }
-            label {
-                text-align: right;
-                padding-right: 15px;
-            }
-            br { clear: left; }
-            #btnSubmit{
-                margin-left: 170px;
-            }
-            #div{
-                margin-left: 220px;
-            }
+                label,input 
+                {
+                    display: block;
+                    width: 150px;
+                    float: left;
+                    margin-bottom: 10px;
+                }
+                label {
+                    text-align: right;
+                    padding-right: 15px;
+                }
+                br { clear: left; }
+                #btnSubmit{
+                    margin-left: 170px;
+                }
+                #div{
+                    margin-left: 220px;
+                }
             </style>
     </head>
     <body>
